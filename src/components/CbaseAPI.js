@@ -24,29 +24,25 @@ class CbaseAPI extends Component {
     const { posts } = this.state;
     return (
         <>
-       <div className='logo-container'>
-        <img src={Logo} className='logo'/>
-       </div>
-      <div className='space-container'>
+          <div className='logo-container'>
+            <img src={Logo} className='logo'/>
+          </div>
+          <div className='space-container'>
 
-        {posts && posts.map(post => 
-        <>
-        <div key={post.id} className='space'>
-            <div className='img-container'>
-                <img src={post.img_url} alt={post.name}/>
+            {posts && posts.map(post => 
+            <div key={post.id} className='space'>
+                <div className='img-container'>
+                    <img src={post.img_url} alt={post.name}/>
+                </div>
+                <div className='info'>
+                    <h3 className='name'>Name: {post.name}</h3>
+                    <h3 className='inhabitants'>Inhabitants: {post.inhabitants[0]}</h3>
+                    <span className='type'>Type: {post.type}</span>
+                </div>
             </div>
-            <div className='info'>
-                <h3 className='name'>Name: {post.name}</h3>
-                <h3 className='inhabitants'>Inhabitants: {post.inhabitants[0]}</h3>
-                <span className='type'>Type: {post.type}</span>
-            </div>
-        </div>
-        </>)}
-
-      </div>
-      
-
-     </>
+            )}
+          </div>
+        </>
     )
   }
 }
